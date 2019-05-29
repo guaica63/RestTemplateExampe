@@ -49,6 +49,7 @@ public class RestTemplateExample
 		Long indice = (long) 400;
 		Actor newActor = new Actor(indice, "AdamLogin", "Avatar_Adam");
 		 
+		// Lanza con RestTemplate la creacion de registro.
 	    Actor result = restTemplate.postForObject( urlCrea, newActor, Actor.class);
 	 
 	    System.out.println("Resultado de la creacion RESTTEMPLATE: " + result);
