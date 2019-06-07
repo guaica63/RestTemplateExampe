@@ -2,27 +2,28 @@ package com.jcg.example.bean;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Actor")
 public class Actor implements Serializable {
 
 	private static final long serialVersionUID = 7679620555959552912L;
 
+	@Id
+	@Column(name = "actor_id", unique = true, nullable = false)
 	private Long id;
 
+	@Column(name = "Login")
 	private String login;
 
+	@Column(name = "Avatar_url")
 	private String avatar_url;
-	
-	public Actor(
-		@JsonProperty("id") Long id,
-		@JsonProperty("login") String login,
-		@JsonProperty("avatar_url") String avatar_url) {
-		this.id = id;
-		this.login = login;
-		this.avatar_url = avatar_url;
-	}
 
+	
 	public Long getId() {
 		return id;
 	}
